@@ -56,7 +56,7 @@ export default async function AdminPage(){
     <header className="admin-header"><div><span className="eyebrow">ADMIN CONTROL CENTER</span><h1>لوحة إدارة المدرسة</h1><p>كل البيانات التشغيلية للمنصة من مكان واحد.</p></div><div className="admin-health"><Activity size={18}/><span>قاعدة البيانات: <strong>{process.env.DATABASE_URL?'متصلة':'غير مهيأة'}</strong></span></div></header>
     <section className="admin-stats">{[
       ['طلبات التسجيل',pendingRegistrationsRows.length,ClipboardCheck],['المستخدمون',usersCount,Users],['المدرسون',teachersCount,GraduationCap],['الطلاب',studentsCount,UserRoundPlus],['الصفوف',classesCount,School],['المواد',subjectsCount,BookOpen],['الدرجات',gradesCount,BarChart3],['الواجبات',assignmentsCount,CheckSquare2],['التبليغات',announcementsCount,Megaphone],['التقويم',eventsCount,CalendarDays],['الملفات',filesCount,FileText],['الإشعارات',notificationsCount,AlertTriangle],['المجتمع',postsCount,MessageSquare],['القواعد',rulesCount,Settings2],['الحضور',attendanceCount,Activity],['المواقع',locationsCount,MapPin]
-    ].map(([label,value,Icon])=><div className="admin-stat" key={String(label)}><Icon size={18}/><span>{label as string}</span><strong>{String(value)}</strong></div>)}</section>
+    ].map(([label,value,Icon])=><div className="admin-stat" key={String(label)}><span>{label as string}</span><strong>{String(value)}</strong></div>)}</section>
 
     <div className="admin-grid">
       <details className="admin-panel" open><summary><ClipboardCheck size={18}/> طلبات التسجيل — بانتظار الموافقة</summary><div className="admin-panel-body">
