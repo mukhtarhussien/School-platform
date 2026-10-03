@@ -1,5 +1,3 @@
-'use server'
-
 import { requireDb } from '@/db'
 import { communityPosts } from '@/db/schema'
 import { getCurrentUser } from '@/lib/auth'
@@ -7,6 +5,8 @@ import { Localized } from '@/components/localized'
 import { redirect } from 'next/navigation'
 
 async function createPost(formData: FormData) {
+  'use server'
+
   const user = await getCurrentUser()
 
   if (!user) {
